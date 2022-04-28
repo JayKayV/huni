@@ -9,5 +9,6 @@ public interface HotelService {
     Optional<Hotel> find(int id);
     List<Hotel> findall();
     void add(Hotel hotel);
+    void save(Hotel hotel);
     boolean deleteById(int id);
 }

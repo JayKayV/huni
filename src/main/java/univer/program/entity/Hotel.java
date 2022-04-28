@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Base64;
 
 @Entity
 public class Hotel {
@@ -24,11 +25,37 @@ public class Hotel {
     private String city;
     private String address;
 
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    private String phone_number;
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public String getBase64Image() {
+        return Base64.getEncoder().encodeToString(image);
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    private byte[] image;
+
     public Hotel() {}
-    public Hotel(String country, String city, String address) {
+    public Hotel(String name, String country, String city, String address, String phone_number) {
+        this.name = name;
         this.country = country;
         this.city = city;
         this.address = address;
+        this.phone_number = phone_number;
     }
 
     public int getId() {
@@ -61,5 +88,13 @@ public class Hotel {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setData(String name, String country, String city, String address, String phone_number) {
+        this.name = name;
+        this.country = country;
+        this.city = city;
+        this.address = address;
+        this.phone_number = phone_number;
     }
 }

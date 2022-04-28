@@ -39,4 +39,8 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> findall() {
         return (List<Hotel>)hotelRepo.findAll();
     }
+
+    public void save(Hotel hotel) {
+        hotelRepo.save(hotel);
+    }
 }
