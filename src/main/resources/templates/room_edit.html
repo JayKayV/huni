@@ -44,32 +44,41 @@
                 <div class="container-fluid">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Add hotel form</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Edit room form</h6>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <form th:action="@{/admin/hotel/save}" enctype="multipart/form-data" method="post">
-                                <label for="name">Hotel name</label>
-                                <input type="text" class="form-control" name="name" id="name" required>
-                                <label for="country">Country</label>
-                                <input type="text" class="form-control" name="country" id="country" required>
-                                <label for="city">City</label>
-                                <input type="text" class="form-control" name="city" id="city"  required>
-                                <label for="address">Address</label>
-                                <input type="text" class="form-control" name="address" id="address" required>
-                                <label for="phoneNumber">Phone number</label>
-                                <input type="text" class="form-control" name="phone_number" id="phoneNumber" required>
-                                <label for="controlFile">Hotel image file</label>
-                                <input type="file" class="form-control-file" name="image" id="controlFile" accept=".png,.jpg,.jpeg" required>
+                                <form th:object="${room}" th:action="@{${'/admin/room/save/' + id}}"  method="post">
+                                    <input type="hidden" name="id" th:value="*{id}">
+                                    <label for="number">Room number</label>
+                                    <input type="text" class="form-control" name="number" id="number" th:value="*{number}" required>
 
-                                <input type="submit" value="Save">
+                                    <p>Room type</p>
+                                    <input type="radio" name="type" value="normal" id="normal">
+                                    <label for="normal">Normal</label>
+                                    <input type="radio" name="type" value="vip" id="vip">
+                                    <label for="vip">VIP</label>
+                                    <input type="radio" name="type" value="special" id="special">
+                                    <label for="special">Special</label>
+                                    <br>
+
+                                    <label for="bedcnt">Number of beds</label>
+                                    <input type="number" class="form-control" name="bed_cnt" id="bedcnt" th:value="*{bed_cnt}" required
+                                           min="1" max="10">
+                                    <label for="price">Room price</label>
+                                    <input type="number" class="form-control" name="price" id="price" th:value="*{price}" required>
+                                    <input type="submit" value="Save">
                                 </form>
                             </div>
+
+                            <form th:action="@{${'/admin/room/delete/'+ room.id}}" method="post">
+                                <button class="btn btn-danger" id="deleteHotel">Delete room</button>
+                            </form>
                         </div>
                     </div>
 
-                    <a href="/admin/hotel">
-                        <button class="btn btn-primary">Return to hotel page</button>
+                    <a th:href="@{${'/admin/room?hid='+room.hotel.id}}">
+                        <button class="btn btn-primary">Return to room list</button>
                     </a>
                 </div>
                 <!-- /.container-fluid -->

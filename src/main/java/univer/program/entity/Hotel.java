@@ -1,15 +1,13 @@
 package univer.program.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Base64;
+import java.util.Set;
 
 @Entity
 public class Hotel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     public String getName() {
@@ -24,6 +22,9 @@ public class Hotel {
     private String country;
     private String city;
     private String address;
+
+    @OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Room> rooms;
 
     public String getPhone_number() {
         return phone_number;

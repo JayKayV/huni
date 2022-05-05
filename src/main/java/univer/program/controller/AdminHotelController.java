@@ -9,6 +9,7 @@ import univer.program.entity.Hotel;
 import univer.program.service.HotelService;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin/hotel")
@@ -46,9 +47,12 @@ public class AdminHotelController {
 
     @GetMapping("/edit/{id}")
     public String editHotel(@PathVariable("id") int id, Model model) {
-        Hotel hotel = hotelService.find(id).get();
+        Optional<Hotel> hotel = hotelService.find(id);
 
-        model.addAttribute("hotel", hotel);
+        if (hotel.isEmpty())
+            return "404";
+
+        model.addAttribute("hotel", hotel.get());
         return "hotel_edit.html";
     }
 
