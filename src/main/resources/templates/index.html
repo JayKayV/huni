@@ -43,11 +43,13 @@
                                 <!-- Email address input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                                        <form action="/hotelList">
+                                            <input class="form-control form-control-lg" id="emailAddress" type="text" placeholder="Ha Noi, ..." data-sb-validations="required,email" />
+                                            <div class="col-auto">
+                                                <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Find now</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Find now</button></div>
                                 </div>
                                 <!-- Submit success message-->
                                 <!---->

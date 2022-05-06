@@ -27,7 +27,7 @@ public class Room {
         this.hotel = hotel;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
 
@@ -78,5 +78,10 @@ public class Room {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Number: %s,Type: %s,Bed_Cnt: %d,Price: %d", number, type, bed_cnt, price);
     }
 }

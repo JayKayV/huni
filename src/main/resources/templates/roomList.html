@@ -45,7 +45,7 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <a href="/admin/hotel/add">
+                <a th:href="@{/admin/room/add(hid=${hid})}">
                     <button class="btn btn-dark">Add new room</button>
                 </a>
                 <div class="card shadow mb-4">
@@ -85,7 +85,7 @@
                                         <a th:href="@{${'/admin/room/edit?id=' + room.id}}" class="btn btn-info btn-circle btn-sm">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                        <a th:href="@{${'/admin/room/edit?id=' + room.id + '#deleteRoom'}}" class="btn btn-danger btn-circle btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

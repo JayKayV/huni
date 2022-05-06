@@ -48,13 +48,12 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <form th:object="${room}" th:action="@{/admin/room/saveedit/}"  method="post">
-                                    <input type="hidden" name="id" th:value="*{id}">
+                                <form th:object="${room}" th:action="@{${'/admin/room/save/'+ hid}}"  method="post">
                                     <label for="number">Room number</label>
-                                    <input type="text" class="form-control" name="number" id="number" th:value="*{number}" required>
+                                    <input type="text" class="form-control" name="number" id="number" th:field="*{number}" required>
 
                                     <p>Room type</p>
-                                    <input type="radio" name="type" value="normal" id="normal">
+                                    <input type="radio" name="type" value="normal" id="normal" >
                                     <label for="normal">Normal</label> <br>
                                     <input type="radio" name="type" value="vip" id="vip">
                                     <label for="vip">VIP</label> <br>
@@ -62,22 +61,18 @@
                                     <label for="special">Special</label>
                                     <br>
 
-                                    <label for="bedcnt">Number of beds</label>
-                                    <input type="number" class="form-control" name="bed_cnt" id="bedcnt" th:value="*{bed_cnt}" required
+                                    <label for="bed_cnt">Number of beds</label>
+                                    <input type="number" class="form-control" name="bed_cnt" id="bed_cnt" th:field="*{bed_cnt}" required
                                            min="1" max="10">
                                     <label for="price">Room price</label>
-                                    <input type="number" class="form-control" name="price" id="price" th:value="*{price}" required>
+                                    <input type="number" class="form-control" name="price" id="price" th:field="*{price}" required>
                                     <input type="submit" value="Save">
                                 </form>
                             </div>
-
-                            <form th:action="@{${'/admin/room/delete/'+ room.id}}" method="post">
-                                <button class="btn btn-danger" id="deleteRoom">Delete room</button>
-                            </form>
                         </div>
                     </div>
 
-                    <a th:href="@{${'/admin/room?hid='+room.hotel.id}}">
+                    <a th:href="@{${'/admin/room?hid='+hid}}">
                         <button class="btn btn-primary">Return to room list</button>
                     </a>
                 </div>
