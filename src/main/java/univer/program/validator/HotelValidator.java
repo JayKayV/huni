@@ -29,5 +29,6 @@ public class HotelValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,"country", "country field cannot be null");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,"city", "city field cannot be null");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,"address", "address field cannot be null");
+
     }
 }

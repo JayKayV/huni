@@ -15,15 +15,15 @@ public class RoomServiceImpl implements RoomService {
     @Autowired
     private RoomRepository roomRepository;
 
-    public void add(Room room) {
+    public final void add(Room room) {
         roomRepository.save(room);
     }
 
-    public void save(Room room) {
+    public final void save(Room room) {
         roomRepository.save(room);
     }
 
-    public boolean deleteById(int id) {
+    public final boolean deleteById(int id) {
         Optional<Room> room = roomRepository.findById(id);
 
         if (room.isEmpty())
@@ -33,11 +33,11 @@ public class RoomServiceImpl implements RoomService {
         return true;
     }
 
-    public List<Room> findByHotel(Hotel hotel) {
+    public final List<Room> findByHotel(Hotel hotel) {
         return roomRepository.findByHotel(hotel);
     }
 
-    public Optional<Room> findById(int id) {
+    public final Optional<Room> findById(int id) {
         return roomRepository.findById(id);
     }
 }
