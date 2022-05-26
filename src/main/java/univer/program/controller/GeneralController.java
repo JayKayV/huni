@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GeneralController {
-    @GetMapping("/404")
-    public String error404() {
+    @GetMapping("/admin404")
+    public String adminError404() {
+        return "404";
+    }
+
+    @GetMapping("/user404")
+    public String userError404() {
         return "404";
     }
 
@@ -16,5 +21,9 @@ public class GeneralController {
     public String error(@RequestParam("e") String[] errors, Model model) {
         model.addAttribute("error", errors);
         return "errorPage";
+    }
+    @GetMapping("/about")
+    public String about() {
+        return "about";
     }
 }

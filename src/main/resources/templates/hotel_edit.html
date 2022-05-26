@@ -67,6 +67,9 @@
                                     <input type="text" class="form-control" name="address" id="address" th:value="*{address}" required>
                                     <label for="phoneNumber">PHone number</label>
                                     <input type="text" class="form-control" name="phone_number" id="phoneNumber" th:value="*{phone_number}" pattern="[0-9]" required>
+                                    <br> <textarea name="description" rows="3" cols="50" th:placeholder="*{description}" class="form-control">
+
+                                    </textarea> <br>
                                     <label for="controlFile">Upload hotel image file</label>
                                     <input type="file" class="form-control-file" name="image" id="controlFile" accept=".png,.jpg,.jpeg" required>
 

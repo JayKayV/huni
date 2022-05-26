@@ -33,13 +33,11 @@ public class AdminHotelController {
     }
 
     @PostMapping("/save")
-    public String addHotel(@RequestParam("image") MultipartFile multipartFile,
-                           @RequestParam("name") String name,
-                           @RequestParam("country") String country,
-                           @RequestParam("city") String city,
-                           @RequestParam("address") String address,
-                           @RequestParam("phone_number") String phone_number) throws IOException {
-        Hotel hotel = new Hotel(name, country, city, address, phone_number);
+    public String addHotel(@RequestParam("image") MultipartFile multipartFile, @RequestParam("name") String name,
+                           @RequestParam("country") String country, @RequestParam("city") String city,
+                           @RequestParam("address") String address, @RequestParam("phone_number") String phone_number,
+                           @RequestParam("description") String description) throws IOException {
+        Hotel hotel = new Hotel(name, country, city, address, phone_number, description);
         hotel.setImage(multipartFile.getBytes());
         hotelService.save(hotel);
         return "redirect:/admin/hotel";
@@ -71,14 +69,14 @@ public class AdminHotelController {
 
     @PostMapping(value="/save/{id}")
     public String saveHotel(@PathVariable("id") int id, @RequestParam("image") MultipartFile multipartFile,
-                            @RequestParam("name") String name,
-                            @RequestParam("country") String country,
-                            @RequestParam("city") String city,
-                            @RequestParam("address") String address,
-                            @RequestParam("phone_number") String phone_number)
+                            @RequestParam("name") String name, @RequestParam("country") String country,
+                            @RequestParam("city") String city, @RequestParam("address") String address,
+                            @RequestParam("phone_number") String phone_number,
+                            @RequestParam("description") String description
+                            )
             throws IOException {
         Hotel hotel = hotelService.find(id).get();
-        hotel.setData(name, country, city, address, phone_number);
+        hotel.setData(name, country, city, address, phone_number, description);
         hotel.setImage(multipartFile.getBytes());
         hotelService.save(hotel);
 

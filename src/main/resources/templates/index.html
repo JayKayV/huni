@@ -1,246 +1,402 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Booking Pro</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/css/landing-styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#!">Booking Pro</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+
+<head>
+    <title>SUMMER HOTEL </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/superslides.css" rel="stylesheet">
+    <link href="/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="/css/select2.css" rel="stylesheet">
+    <link href="/css/smoothness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <link href="/css/slick.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body class="front" data-spy="scroll" data-target="#top-inner" data-offset="0">
+<div id="main">
+    <div class="search-wrapper">
+        <div class="container">
+            <div class="search-inner clearfix">
+                <div class="search-field"><input type="text" class="form-control" value="" placeholder="Enter Your Search..."></div><a href="#" class="search-btn search-close"><i class="fa fa-times" aria-hidden="true"></i></a>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5">Looking for a place for your vacation? Start here!</h1>
-                            <!-- Signup form-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <!-- Email address input-->
-                                <div class="row">
-                                    <div class="col">
-                                        <form action="/hotelList">
-                                            <input class="form-control form-control-lg" id="emailAddress" type="text" placeholder="Ha Noi, ..." data-sb-validations="required,email" />
-                                            <div class="col-auto">
-                                                <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Find now</button>
-                                            </div>
-                                        </form>
+        </div>
+    </div>
+    <div class="top-wrapper top-wrapper-dark">
+        <div class="top-inner" id="top-inner">
+            <div class="top1-wrapper">
+                <div class="container">
+                    <div class="top1 clearfix">
+
+                        <div class="social-wrapper">
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="account dropdown"><a class="dropdown-toggle" href="/login" role="button" id="dropdownAccount2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sign in</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownAccount2"><a class="dropdown-item" href="#">EDIT PROFILE</a><a class="dropdown-item" href="#">SIGN OUT</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top2-wrapper">
+                <div class="container">
+                    <div class="top2 clearfix">
+                        <header>
+                            <div class="logo_wrapper"><a href="index.html" class="logo"><img src="images/logo-white.png" alt="" class="img-fluid"></a></div>
+                        </header>
+                        <nav class="navbar_ navbar navbar-expand-md clearfix"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                                <ul class="nav navbar-nav sf-menu clearfix">
+                                    <li class="nav-item sub-menu sub-menu-2"><a href="#" class="active nav-link">Home <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <div class="sf-mega">
+                                            <ul>
+                                                <li><a href="index-1.html">Winter Hotel</a></li>
+                                                <li><a href="index.html">Summer Hotel</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item"><a href="/about" class="nav-link">About us</a></li>
+                                    <li class="nav-item"><a href="/rooms" class="nav-link">Our Rooms</a></li>
+                                    <li class="nav-item"><a href="/contacts" class="nav-link">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="home" class="">
+        <div id="home-inner" class="home-inner">
+            <div id="slides_wrapper" class="">
+                <div id="slides">
+                    <ul class="slides-container">
+                        <li><img src="/images/slide01.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide04.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide03.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide02.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide05.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide06.jpg" alt="" class="img"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-text-wrapper">
+                <div class="container">
+                    <div class="slide-text clearfix">
+                        <div class="img1"><img src="images/slide-logo.png" alt="" class="img-fluid"></div>
+                        <div class="txt1"><span>ROYAL CITY<i><img src="/images/slide-logo2.png" alt="" class="img-fluid"></i></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="booking-wrapper">
+            <div class="container">
+                <div class="booking-inner clearfix">
+                    <form action="javascript:;" class="form1 clearfix">
+                        <div class="col1 c1">
+                            <div class="input1_wrapper"><label>Check in</label>
+                                <div class="input1_inner"><input type="text" class="form-control input datepicker" placeholder="Check in"></div>
+                            </div>
+                        </div>
+                        <div class="col1 c2">
+                            <div class="input1_wrapper"><label>Check out</label>
+                                <div class="input1_inner"><input type="text" class="form-control input datepicker" placeholder="Check out"></div>
+                            </div>
+                        </div>
+                        <div class="col2 c3">
+                            <div class="select1_wrapper"><label>Adults</label>
+                                <div class="select1_inner"><select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Adult</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="4">4 Adults</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <div class="col2 c4">
+                            <div class="select1_wrapper"><label>Children</label>
+                                <div class="select1_inner"><select class="select2 select" style="width: 100%">
+                                    <option value="1">Children</option>
+                                    <option value="1">1 Child</option>
+                                    <option value="2">2 Children</option>
+                                    <option value="3">3 Children</option>
+                                    <option value="4">4 Children</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <div class="col2 c5">
+                            <div class="select1_wrapper"><label>Rooms</label>
+                                <div class="select1_inner"><select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Room</option>
+                                    <option value="2">2 Rooms</option>
+                                    <option value="3">3 Rooms</option>
+                                    <option value="4">4 Rooms</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <div class="col3 c6"><button type="submit" class="btn-form1-submit">CHECK AVAILABILITY</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="top-wrapper"></div>
+    <div id="about">
+        <div class="container">
+            <div class="title1">LITTLE ABOUT US</div>
+            <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+            <div class="about-slider-wrapper clearfix">
+                <div class="about-slider-left">
+                    <figure class="about-slider-thumb"><img src="/images/about00.jpg" alt="" class="img-fluid"></figure>
+                    <div class="slider-for">
+                        <div class="slider-item"><img src="/images/about01.jpg" alt="" class="img-fluid"></div>
+                        <div class="slider-item"><img src="/images/about02.jpg" alt="" class="img-fluid"></div>
+                        <div class="slider-item"><img src="/images/about03.jpg" alt="" class="img-fluid"></div>
+                    </div>
+                </div>
+                <div class="about-slider-right">
+                    <div class="slider-nav">
+                        <div class="slider-item">
+                            <div class="txt1">Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.</div>
+                            <div class="txt2">
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi in lore ipsum dolor.</p>
+                                <p>Quis.consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Morbi porttitor mi id metus mollis. Sed dictum ligula mi id metus msed dictum ligula nibus fbus, mi in lore ipsum dolor.</p>
+                            </div>
+
+                        </div>
+                        <div class="slider-item">
+                            <div class="txt1">Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.</div>
+                            <div class="txt2">
+                                <p> Morem ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi in lore ipsum dolor, Nunc finibus, mi in tincidunt aliquet, ex orci venenatis.</p>
+                                <p>Auis.consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Mi in lore ipsum dolor.</p>
+                            </div>
+
+                        </div>
+                        <div class="slider-item">
+                            <div class="txt1">Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.</div>
+                            <div class="txt2">
+                                <p> Mollised ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi in lore ipsum dolor.</p>
+                                <p>Consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Morbi porttitor mi id metus mollis. Sed dictum ligula mi id metus mollised dictum ligula nibus finibus, mi in lore ipsum dolor.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rooms">
+        <div class="container">
+            <div class="title1">OUR ROOMS</div>
+            <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="room-wrapper">
+                        <div class="room-inner">
+                            <div class="room">
+                                <figure><img src="/images/room04.jpg" alt="" class="img-fluid">
+                                    <figcaption>
+                                        <div class="txt1">GRAND DELVATORE</div>
+                                        <div class="txt2">START FROM $450.00</div>
+                                    </figcaption>
+                                </figure>
+                                <div class="caption">
+                                    <div class="txt1">Grand Delux Room</div>
+                                    <div class="txt2">39 REVEW<div class="small-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                                    </div>
+                                    <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
+                                    <div class="txt4"><a href="details.html">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                </div>
+                                <div class="select-txt"><a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="room-icons">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="room-wrapper">
+                        <div class="room-inner">
+                            <div class="room">
+                                <figure><img src="/images/room05.jpg" alt="" class="img-fluid">
+                                    <figcaption>
+                                        <div class="txt1">KING DELVATORE</div>
+                                        <div class="txt2">START FROM $315.00</div>
+                                    </figcaption>
+                                </figure>
+                                <div class="caption">
+                                    <div class="txt1">King Delux Room</div>
+                                    <div class="txt2">39 REVEW<div class="small-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                                    </div>
+                                    <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
+                                    <div class="txt4"><a href="details.html">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                </div>
+                                <div class="select-txt"><a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="room-icons">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="room-wrapper">
+                        <div class="room-inner">
+                            <div class="room">
+                                <figure><img src="/images/room06.jpg" alt="" class="img-fluid">
+                                    <figcaption>
+                                        <div class="txt1">CLASSIC DELVATORE</div>
+                                        <div class="txt2">START FROM $115.00</div>
+                                    </figcaption>
+                                </figure>
+                                <div class="caption">
+                                    <div class="txt1">Classic Room</div>
+                                    <div class="txt2">87 REVEW<div class="small-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                                    </div>
+                                    <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
+                                    <div class="txt4"><a href="details.html">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                </div>
+                                <div class="select-txt"><a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="room-icons">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="what-client-say">
+        <div class="container">
+            <div class="title1">WHAT CLIENT SAY</div>
+            <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+            <div class="owl-carousel owl-carousel-testimonials">
+                <div class="item">
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-inner">
+                            <div class="testimonial clearfix">
+                                <div class="testimonial-caption"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
+                                <div class="author clearfix">
+                                    <figure><img src="/images/client01.jpg" alt="" class="img-fluid"></figure>
+                                    <div class="caption">
+                                        <div class="txt1">Nina Chambers</div>
+                                        <div class="txt2">Web Developer</div>
                                     </div>
                                 </div>
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        <p>To activate this form, sign up at</p>
-                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-inner">
+                            <div class="testimonial clearfix">
+                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
+                                <div class="author clearfix">
+                                    <figure><img src="/images/client02.jpg" alt="" class="img-fluid"></figure>
+                                    <div class="caption">
+                                        <div class="txt1">Jeremy Carlson</div>
+                                        <div class="txt2">Web Developer</div>
                                     </div>
                                 </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- Icons Grid-->
-        <section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <h3>Fully Responsive</h3>
-                            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <h3>Bootstrap 5 Ready</h3>
-                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Easy to Use</h3>
-                            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Image Showcases-->
-        <section class="showcase">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Fully Responsive Design</h2>
-                        <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-                    </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
-                    <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Updated For Bootstrap 5</h2>
-                        <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
-                    </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Easy to Use & Customize</h2>
-                        <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Testimonials-->
-        <section class="testimonials text-center bg-light">
-            <div class="container">
-                <h2 class="mb-5">What people are saying...</h2>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                            <h5>Margaret E.</h5>
-                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                            <h5>Fred S.</h5>
-                            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                            <h5>Sarah W.</h5>
-                            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Call to Action-->
-        <section class="call-to-action text-white text-center" id="signup">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                        <!-- Signup form-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
-                            <!-- Email address input-->
-                            <div class="row">
-                                <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
-                                </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
                             </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    <p>To activate this form, sign up at</p>
-                                    <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-inner">
+                            <div class="testimonial clearfix">
+                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
+                                <div class="author clearfix">
+                                    <figure><img src="/images/client03.jpg" alt="" class="img-fluid"></figure>
+                                    <div class="caption">
+                                        <div class="txt1">Josie Howell</div>
+                                        <div class="txt2">Web Developer</div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                        </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-inner">
+                            <div class="testimonial clearfix">
+                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
+                                <div class="author clearfix">
+                                    <figure><img src="/images/client01.jpg" alt="" class="img-fluid"></figure>
+                                    <div class="caption">
+                                        <div class="txt1">Nina Chambers</div>
+                                        <div class="txt2">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-inner">
+                            <div class="testimonial clearfix">
+                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
+                                <div class="author clearfix">
+                                    <figure><img src="/images/client02.jpg" alt="" class="img-fluid"></figure>
+                                    <div class="caption">
+                                        <div class="txt1">Jeremy Carlson</div>
+                                        <div class="txt2">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-inner">
+                            <div class="testimonial clearfix">
+                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
+                                <div class="author clearfix">
+                                    <figure><img src="/images/client03.jpg" alt="" class="img-fluid"></figure>
+                                    <div class="caption">
+                                        <div class="txt1">Josie Howell</div>
+                                        <div class="txt2">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="/js/landing-scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+        </div>
+    </div>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/superfish.js"></script>
+    <script src="/js/jquery.superslides.js"></script>
+    <script src="/js/jquery.fancybox.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <script src="/js/select2.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/slick.js"></script>
+    <script src="/js/jquery.appear.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
 </html>

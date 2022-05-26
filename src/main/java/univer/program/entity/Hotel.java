@@ -22,6 +22,7 @@ public class Hotel {
     private String country;
     private String city;
     private String address;
+    private String description;
 
     @OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Room> rooms;
@@ -51,12 +52,14 @@ public class Hotel {
     private byte[] image;
 
     public Hotel() {}
-    public Hotel(String name, String country, String city, String address, String phone_number) {
+    public Hotel(String name, String country, String city,
+                 String address, String phone_number, String description) {
         this.name = name;
         this.country = country;
         this.city = city;
         this.address = address;
         this.phone_number = phone_number;
+        this.description = description;
     }
 
     public int getId() {
@@ -91,11 +94,21 @@ public class Hotel {
         this.address = address;
     }
 
-    public void setData(String name, String country, String city, String address, String phone_number) {
+    public void setData(String name, String country, String city,
+                        String address, String phone_number, String description) {
         this.name = name;
         this.country = country;
         this.city = city;
         this.address = address;
         this.phone_number = phone_number;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

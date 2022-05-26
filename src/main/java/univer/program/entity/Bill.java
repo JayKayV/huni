@@ -1,9 +1,6 @@
 package univer.program.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
 
@@ -12,7 +9,7 @@ public class Bill {
     @Id
     private int id;
 
-    @OneToOne
+    @ManyToOne
     private User user;
 
     private Date checkin;

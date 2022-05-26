@@ -2,6 +2,11 @@ package univer.program.service.impl;
 
 //import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import univer.program.entity.User;
 import univer.program.repository.UserRepository;
@@ -12,11 +17,19 @@ import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
     private final UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    private final UserDetailsService userDetailsService;
+
+    private final AuthenticationManager authenticationManager;
+
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository,
+                           UserDetailsService userDetailsService,
+                           AuthenticationManager authenticationManager) {
+        this.userDetailsService = userDetailsService;
         this.userRepository = userRepository;
+        this.authenticationManager = authenticationManager;
     }
 
     public final List<User> findall() {
@@ -40,5 +53,12 @@ public class UserServiceImpl implements UserService {
     public Optional<User> findById(int id) {
         return userRepository.findById(id);
     }
+    public void login(String username, String password) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
+        authenticationManager.authenticate(token);
 
+        if (token.isAuthenticated())
+            SecurityContextHolder.getContext().setAuthentication(token);
+    }
 }
