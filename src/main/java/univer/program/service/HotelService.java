@@ -10,4 +10,6 @@ public interface HotelService {
     void add(Hotel hotel);
     void save(Hotel hotel);
     boolean deleteById(int id);
+
+    Hotel getFirstHotel();
 }

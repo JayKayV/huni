@@ -11,6 +11,7 @@ public interface UserService {
     List<User> findall();
 
     boolean deleteById(int id);
+
     Optional<User> findById(int id);
 
     void login(String username, String password);

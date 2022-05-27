@@ -15,6 +15,8 @@ public class Bill {
     private Date checkin;
     private Date checkout;
 
+    private int guestCnt;
+
     @OneToMany
     private Set<Room> room;
 
@@ -64,5 +66,13 @@ public class Bill {
 
     public void setRoom(Set<Room> room) {
         this.room = room;
+    }
+
+    public int getGuestCnt() {
+        return guestCnt;
+    }
+
+    public void setGuestCnt(int guestCnt) {
+        this.guestCnt = guestCnt;
     }
 }

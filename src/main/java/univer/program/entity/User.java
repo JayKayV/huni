@@ -1,6 +1,6 @@
 package univer.program.entity;
 
-import org.hibernate.engine.internal.Cascade;
+import org.intellij.lang.annotations.Pattern;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
@@ -16,18 +16,42 @@ public class User {
     private String address;
 
     @Nullable
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(@Nullable String username) {
+        this.username = username;
+    }
+
+    @Nullable
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@Nullable String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    @Nullable
+    @Pattern(value="^[0-9a-zA-Z]]$")
+    private String username;
+    @Nullable
+    @Pattern(value="^(?=.*[0-9])(?=.*[a-z]).{8,20}$")
+    private String password;
+
+    @Nullable
     private String email;
 
-    public UserRole getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
-    }
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private UserRole userRole;
+    private String role;
 
     @OneToMany
     private Set<Bill> bills;
@@ -42,14 +66,14 @@ public class User {
 
     public User(int id, String name, String address,
                 @Nullable String email, String phoneNumber,
-                @Nullable String note, UserRole userRole) {
+                @Nullable String note, String role) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.note = note;
-        this.userRole = userRole;
+        this.role = role;
     }
 
     public int getId() {
@@ -101,4 +125,5 @@ public class User {
     public void setNote(@Nullable String note) {
         this.note = note;
     }
+
 }

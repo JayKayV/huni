@@ -12,4 +12,8 @@ public interface RoomService {
     boolean deleteById(int id);
     void save(Room room);
     Optional<Room> findById(int id);
+
+    int countByType(String type);
+
+    int minPriceByType(String type);
 }

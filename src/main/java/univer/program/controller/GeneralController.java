@@ -22,8 +22,4 @@ public class GeneralController {
         model.addAttribute("error", errors);
         return "errorPage";
     }
-    @GetMapping("/about")
-    public String about() {
-        return "about";
-    }
 }

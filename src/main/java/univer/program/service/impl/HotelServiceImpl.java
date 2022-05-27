@@ -36,6 +36,11 @@ public class HotelServiceImpl implements HotelService {
         return true;
     }
 
+    @Override
+    public Hotel getFirstHotel() {
+        return hotelRepo.findTopByOrderByIdAsc();
+    }
+
     public List<Hotel> findall() {
         return (List<Hotel>)hotelRepo.findAll();
     }

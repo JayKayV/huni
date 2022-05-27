@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+  <title>Rooms</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/font-awesome.css" rel="stylesheet">
+  <link href="/css/superslides.css" rel="stylesheet">
+  <link href="/css/jquery.fancybox.css" rel="stylesheet">
+  <link href="/css/select2.css" rel="stylesheet">
+  <link href="/css/smoothness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+  <link href="/css/owl.carousel.css" rel="stylesheet">
+  <link href="/css/slick.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body class="not-front page-rooms">
+  <div id="main">
+    <div th:replace="fragment/usertmp :: div#header1"></div>
+    <div th:replace="fragment/usertmp :: div#header2"></div>
+    <div class="breadcrumbs1_wrapper">
+      <div class="container">
+        <div class="breadcrumbs1"><a href="index.html">Home</a><span>|</span>Rooms</div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="title1">OUR ROOMS</div>
+        <div class="title2">Lorem ipsum dolor sit amet concateur non tropp di sarono alonso.</div>
+        <div class="our-rooms-wrapper clearfix" th:each = "room:${rooms}">
+                
+            
+          <div class="our-rooms-left">
+            <figure class="our-rooms-thumb"><img src="/images/our-rooms00.jpg" alt="" class="img-fluid"></figure>
+            <figure class="our-rooms-img"><img src="/images/our-rooms01.jpg" alt="" class="img-fluid"></figure>
+          </div>
+          <div class="our-rooms-right">
+            <div class="our-rooms-caption">
+              <div class="txt2" th:text='${room.type}'>  </div>
+              <div class="txt3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales blandit faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci Morbi porttitor mi id metus mollis. Sed dictum ligula.</div>
+              <div class="txt4" > START FROM | <span th:text ="${'$'+room.price}"> </span>PER NIGHT</div>
+               <div class="our-rooms-icons">
+                <div class="our-rooms-icon">
+                  <figure><img src="/images/ic14.png" alt="" class="img-fluid"></figure>
+                  <div class="our-rooms-icon-txt1">Car Parking Available</div>
+                  <div class="our-rooms-icon-txt2">INCLUDES</div>
+                </div>
+                <div class="our-rooms-icon">
+                  <figure><img src="/images/ic12.png" alt="" class="img-fluid"></figure>
+                  <div class="our-rooms-icon-txt1">Breakfast</div>
+                  <div class="our-rooms-icon-txt2">INCLUDES</div>
+                </div>
+                <div class="our-rooms-icon">
+                  <figure><img src="/images/ic13.png" alt="" class="img-fluid"></figure>
+                  <div class="our-rooms-icon-txt1">Transfer from Airport</div>
+                  <div class="our-rooms-icon-txt2">INCLUDES</div>
+                </div>
+                <div class="our-rooms-icon">
+                  <figure><img src="/images/ic11.png" alt="" class="img-fluid"></figure>
+                  <div class="our-rooms-icon-txt1">Free WiFi AROUND the HERE!</div>
+                  <div class="our-rooms-icon-txt2">INCLUDES</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="our-rooms-details"><a href="details.html">
+                <div class="caption">
+                  <div class="txt1" th:text = '${room.number}' > </div>
+                  <div class="txt2">MODERN DELUX ROOM</div>
+                </div>
+                <div class="txt3">VIEW DETAIL <i class="fa fa-caret-right" aria-hidden="true"></i></div>
+              </a></div>
+          </div>
+        </div>
+        
+        
+        
+
+            
+        <div class="text-center"><a href="#" class="btn2">SEE MORE ROOMS</a></div>
+      </div>
+    </div>
+      
+    <div th:replace ="fragment/usertmp:: div#foot "> </div> 
+    
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/superfish.js"></script>
+  <script src="/js/jquery.superslides.js"></script>
+  <script src="/js/jquery.fancybox.js"></script>
+  <script src="/js/jquery.sticky.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+  <script src="/js/select2.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/owl.carousel.js"></script>
+  <script src="/js/slick.js"></script>
+  <script src="/js/jquery.appear.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/scripts.js"></script>
+</body>
+
+</html>

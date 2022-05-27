@@ -6,10 +6,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-//import univer.program.entity.User;
-import univer.program.entity.UserRole;
-import univer.program.repository.UserRoleRepository;
-//import univer.program.service.UserService;
+import univer.program.entity.User;
+import univer.program.repository.UserRepository;
+import univer.program.service.UserService;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -17,26 +16,27 @@ import java.util.Optional;
 import java.util.Set;
 
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private UserRoleRepository userRoleRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    public UserDetailsServiceImpl(UserRoleRepository userRoleRepository) {
-        this.userRoleRepository = userRoleRepository;
+    public UserDetailsServiceImpl(UserRepository userRoleRepository) {
+        this.userRepository = userRoleRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<UserRole> optionalRole = userRoleRepository.findByUsername(username);
+        Optional<User> user = userRepository.findByUsername(username);
 
-        if (optionalRole.isPresent()) {
-            UserRole userRole = optionalRole.get();
+        if (user.isPresent()) {
+            User u = user.get();
+            String role = u.getRole();
             Set<GrantedAuthority> authorities = new HashSet<>();
 
-            if (Objects.equals(userRole.getRole(),"admin"))
+            if (Objects.equals(u.getRole(),"admin"))
                 authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
             else
                 authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-            return new org.springframework.security.core.userdetails.User(userRole.getUsername(), userRole.getPassword(), authorities);
+            return new org.springframework.security.core.userdetails.User(u.getUsername(), u.getPassword(), authorities);
         } else
             throw new UsernameNotFoundException(username + " not found!");
     }

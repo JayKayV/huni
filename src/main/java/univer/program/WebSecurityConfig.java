@@ -11,18 +11,18 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import univer.program.repository.UserRoleRepository;
+import univer.program.repository.UserRepository;
 import univer.program.service.impl.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private UserRoleRepository userRoleRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    public WebSecurityConfig(UserRoleRepository userRoleRepository) {
-        this.userRoleRepository = userRoleRepository;
+    public WebSecurityConfig(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Bean
@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserDetailsServiceImpl(userRoleRepository);
+        return new UserDetailsServiceImpl(userRepository);
     }
 
     @Override

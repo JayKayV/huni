@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+    <title>SUMMER HOTEL </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/superslides.css" rel="stylesheet">
+    <link href="/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="/css/select2.css" rel="stylesheet">
+    <link href="/css/smoothness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <link href="/css/slick.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body class="front" data-spy="scroll" data-target="#top-inner" data-offset="0">
+<div id="main" >
+    <div class="search-wrapper" id ="header1"  >
+        <div class="container"  >
+            <div class="search-inner clearfix" >
+                <div class="search-field"><input type="text" class="form-control" value="" placeholder="Enter Your Search..."></div><a href="#" class="search-btn search-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="top-wrapper " id ="header2"    >
+        <div class="top-inner" id="top-inner" >
+            <div class="top1-wrapper" >
+                <div class="container">
+                    <div class="top1 clearfix">
+
+                        <div class="social-wrapper">
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="top2-wrapper" >
+                <div class="container">
+                    <div class="top2 clearfix">
+                        <header>
+                            
+                        </header>
+                        <nav class="navbar_ navbar navbar-expand-md clearfix"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                                <ul class="nav navbar-nav sf-menu clearfix">
+                                    <li class="nav-item sub-menu sub-menu-2"><a href="#" class="active nav-link">Home <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <div class="sf-mega">
+                                            <ul>
+                                                <li th:each="hotel:${hotels}">
+                                                    <a th:href="@{${'/hotel/' + hotel.id}}" th:text='${hotel.name}'> </a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item"><a href="/about" class="nav-link">About us</a></li>
+                                    <li class="nav-item"><a href="/rooms" class="nav-link">Our Rooms</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bot2-wrapper" id = "foot" >
+      <div class="container">
+        <div class="bot2 clearfix">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="bot2-title">Contact Info</div>
+              <div class="contact1"><b>A:</b>41 Gridgum Sreet 121/2 New-York, USA</div>
+              <div class="contact1"><b>P:</b>(00) 123 456 789</div>
+              <div class="contact1"><b>F:</b>(00) 987 654 321</div>
+              <div class="contact1"><b>E:</b><a href="#">info.contact@yourdomain.com</a></div>
+            </div>
+            <div class="col-md-4">
+              <div class="bot2-title">recent posts</div>
+              <div class="recent-post clearfix"><a href="#">
+                  <figure><img src="/images/recent01.jpg" alt="" class="img-fluid"></figure>
+                  <div class="caption">
+                    <div class="txt1">New Aqua Park <br>Near The Hotel Delvatore</div>
+                    <div class="txt2">11 March, 2018</div>
+                  </div>
+                </a></div>
+              <div class="recent-post clearfix"><a href="#">
+                  <figure><img src="/images/recent02.jpg" alt="" class="img-fluid"></figure>
+                  <div class="caption">
+                    <div class="txt1">Botanic Garden <br>Near The Hotel Delvatore</div>
+                    <div class="txt2">23 March, 2018</div>
+                  </div>
+                </a></div>
+            </div>
+            <div class="col-md-4">
+              <div class="bot2-title">BEST PLACES AROUND ROYAL CITY</div>
+              <ul class="best1 clearfix">
+                <li><a href="#"><img src="/images/best01.jpg" alt="" class="img-fluid"></a></li>
+                <li><a href="#"><img src="/images/best02.jpg" alt="" class="img-fluid"></a></li>
+                <li><a href="#"><img src="/images/best03.jpg" alt="" class="img-fluid"></a></li>
+                <li><a href="#"><img src="/images/best04.jpg" alt="" class="img-fluid"></a></li>
+                <li><a href="#"><img src="/images/best05.jpg" alt="" class="img-fluid"></a></li>
+                <li><a href="#"><img src="/images/best06.jpg" alt="" class="img-fluid"></a></li>
+                <li><a href="#"><img src="/images/best07.jpg" alt="" class="img-fluid"></a></li>
+                <li><a href="#"><img src="/images/best08.jpg" alt="" class="img-fluid"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bot3-wrapper">
+      <div class="container">
+        <div class="bot3 clearfix">
+          <ul class="menu-bot">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="copyrights">Copyright @2018 Made with <i class="fa fa-heart" aria-hidden="true"></i>By <a href="#" target="_blank">Mecovache</a>. All Rights <a href="http://www.bootstrapmb.com/" title="bootstrapmb">Reserved</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/superfish.js"></script>
+    <script src="/js/jquery.superslides.js"></script>
+    <script src="/js/jquery.fancybox.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <script src="/js/select2.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/slick.js"></script>
+    <script src="/js/jquery.appear.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

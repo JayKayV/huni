@@ -48,8 +48,14 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <form th:object="${user}" th:action="@{/admin/user/saveedit/}"  method="post">
+                                <form th:object="${user}" th:action="@{/admin/user/saveedit}"  method="post">
                                     <input type="hidden" name="id" th:value="*{id}">
+                                    <label for="name">Username</label>
+                                    <input type="text" class="form-control" name="number" id="username" th:value="*{username}" required>
+
+                                    <label for="name">User password</label>
+                                    <input type="password" class="form-control" name="number" id="password" th:value="*{password}" required>
+
                                     <label for="name">User info name</label>
                                     <input type="text" class="form-control" name="number" id="name" th:value="*{name}" required>
 
@@ -68,7 +74,7 @@
 
                             <form th:action="@{admin/user/delete}" method="post">
                                 <input type="hidden" value="${user.id}">
-                                <button class="btn btn-danger" id="deleteUser">Delete room</button>
+                                <button class="btn btn-danger" id="deleteUser">Delete user</button>
                             </form>
                         </div>
                     </div>

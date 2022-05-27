@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>SUMMER HOTEL </title>
@@ -50,7 +50,7 @@
                 <div class="container">
                     <div class="top2 clearfix">
                         <header>
-                            <div class="logo_wrapper"><a href="index.html" class="logo"><img src="images/logo-white.png" alt="" class="img-fluid"></a></div>
+                            <div class="logo_wrapper"><a href="index.html" class="logo"><img src="/images/logo-white.png" alt="" class="img-fluid"></a></div>
                         </header>
                         <nav class="navbar_ navbar navbar-expand-md clearfix"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent2">
@@ -58,14 +58,14 @@
                                     <li class="nav-item sub-menu sub-menu-2"><a href="#" class="active nav-link">Home <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <div class="sf-mega">
                                             <ul>
-                                                <li><a href="index-1.html">Winter Hotel</a></li>
-                                                <li><a href="index.html">Summer Hotel</a></li>
+                                                <li th:each="hotel:${hotels}">
+                                                    <a th:href="@{${'/hotel/' + hotel.id}}" th:text='${hotel.name.substring(0, 2)}'> </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item"><a href="/about" class="nav-link">About us</a></li>
                                     <li class="nav-item"><a href="/rooms" class="nav-link">Our Rooms</a></li>
-                                    <li class="nav-item"><a href="/contacts" class="nav-link">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -75,7 +75,7 @@
         </div>
     </div>
     <div id="home" class="">
-        <div id="home-inner" class="home-inner">
+        <div id="home-inner" class="home-inner" >
             <div id="slides_wrapper" class="">
                 <div id="slides">
                     <ul class="slides-container">
@@ -91,8 +91,8 @@
             <div class="slide-text-wrapper">
                 <div class="container">
                     <div class="slide-text clearfix">
-                        <div class="img1"><img src="images/slide-logo.png" alt="" class="img-fluid"></div>
-                        <div class="txt1"><span>ROYAL CITY<i><img src="/images/slide-logo2.png" alt="" class="img-fluid"></i></span></div>
+                        <div class="img1"><img src="/images/slide-logo.png" alt="" class="img-fluid"></div>
+                        <div class="txt1"><span th:text="${h.name}"><i><img src="/images/slide-logo2.png" alt="" class="img-fluid"></i></span></div>
                     </div>
                 </div>
             </div>
@@ -103,12 +103,12 @@
                     <form action="javascript:;" class="form1 clearfix">
                         <div class="col1 c1">
                             <div class="input1_wrapper"><label>Check in</label>
-                                <div class="input1_inner"><input type="text" class="form-control input datepicker" placeholder="Check in"></div>
+                                <div class="input1_inner"><input type="date" class="form-control input datepicker" placeholder="Check in"></div>
                             </div>
                         </div>
                         <div class="col1 c2">
                             <div class="input1_wrapper"><label>Check out</label>
-                                <div class="input1_inner"><input type="text" class="form-control input datepicker" placeholder="Check out"></div>
+                                <div class="input1_inner"><input type="date" class="form-control input datepicker" placeholder="Check out"></div>
                             </div>
                         </div>
                         <div class="col2 c3">
@@ -165,10 +165,10 @@
                 <div class="about-slider-right">
                     <div class="slider-nav">
                         <div class="slider-item">
-                            <div class="txt1">Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.</div>
+                            <div class="txt1" th:text="${h.country + ' ,' + h.city + ' ,' + h.address}" style="font-style: italic;"></div>
                             <div class="txt2">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi in lore ipsum dolor.</p>
-                                <p>Quis.consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Morbi porttitor mi id metus mollis. Sed dictum ligula mi id metus msed dictum ligula nibus fbus, mi in lore ipsum dolor.</p>
+                                <p th:text="${h.description}"></p>
+
                             </div>
 
                         </div>
@@ -204,18 +204,17 @@
                             <div class="room">
                                 <figure><img src="/images/room04.jpg" alt="" class="img-fluid">
                                     <figcaption>
-                                        <div class="txt1">GRAND DELVATORE</div>
-                                        <div class="txt2">START FROM $450.00</div>
+                                        <div class="txt1">SPECIAL</div>
+                                        <div class="txt2">START FROM $<span th:text="${spMinPrice}"></span>.00</div>
                                     </figcaption>
                                 </figure>
                                 <div class="caption">
                                     <div class="txt1">Grand Delux Room</div>
-                                    <div class="txt2">39 REVEW<div class="small-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                    </div>
+
                                     <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
-                                    <div class="txt4"><a href="details.html">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                    <div class="txt4"><a href="/details/special">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
                                 </div>
-                                <div class="select-txt"><a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="select-txt"><a href="/details/special"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
                                 <div class="room-icons">
 
                                 </div>
@@ -229,18 +228,17 @@
                             <div class="room">
                                 <figure><img src="/images/room05.jpg" alt="" class="img-fluid">
                                     <figcaption>
-                                        <div class="txt1">KING DELVATORE</div>
-                                        <div class="txt2">START FROM $315.00</div>
+                                        <div class="txt1">VIP</div>
+                                        <div class="txt2">START FROM $<span th:text="${vpMinPrice}"></span>.00</div>
                                     </figcaption>
                                 </figure>
                                 <div class="caption">
                                     <div class="txt1">King Delux Room</div>
-                                    <div class="txt2">39 REVEW<div class="small-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                    </div>
+
                                     <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
-                                    <div class="txt4"><a href="details.html">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                    <div class="txt4"><a href="/details/vip">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
                                 </div>
-                                <div class="select-txt"><a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="select-txt"><a href="/details/vip"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
                                 <div class="room-icons">
 
                                 </div>
@@ -254,18 +252,17 @@
                             <div class="room">
                                 <figure><img src="/images/room06.jpg" alt="" class="img-fluid">
                                     <figcaption>
-                                        <div class="txt1">CLASSIC DELVATORE</div>
-                                        <div class="txt2">START FROM $115.00</div>
+                                        <div class="txt1">NORMAL</div>
+                                        <div class="txt2">START FROM $<span th:text="${nmMinPrice}"></span>.00</div>
                                     </figcaption>
                                 </figure>
                                 <div class="caption">
                                     <div class="txt1">Classic Room</div>
-                                    <div class="txt2">87 REVEW<div class="small-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                    </div>
+
                                     <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
-                                    <div class="txt4"><a href="details.html">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                    <div class="txt4"><a href="/details/normal">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
                                 </div>
-                                <div class="select-txt"><a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="select-txt"><a href="/details/normal"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
                                 <div class="room-icons">
 
                                 </div>
@@ -277,110 +274,7 @@
         </div>
     </div>
 
-    <div id="what-client-say">
-        <div class="container">
-            <div class="title1">WHAT CLIENT SAY</div>
-            <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
-            <div class="owl-carousel owl-carousel-testimonials">
-                <div class="item">
-                    <div class="testimonial-wrapper">
-                        <div class="testimonial-inner">
-                            <div class="testimonial clearfix">
-                                <div class="testimonial-caption"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
-                                <div class="author clearfix">
-                                    <figure><img src="/images/client01.jpg" alt="" class="img-fluid"></figure>
-                                    <div class="caption">
-                                        <div class="txt1">Nina Chambers</div>
-                                        <div class="txt2">Web Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-wrapper">
-                        <div class="testimonial-inner">
-                            <div class="testimonial clearfix">
-                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
-                                <div class="author clearfix">
-                                    <figure><img src="/images/client02.jpg" alt="" class="img-fluid"></figure>
-                                    <div class="caption">
-                                        <div class="txt1">Jeremy Carlson</div>
-                                        <div class="txt2">Web Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-wrapper">
-                        <div class="testimonial-inner">
-                            <div class="testimonial clearfix">
-                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
-                                <div class="author clearfix">
-                                    <figure><img src="/images/client03.jpg" alt="" class="img-fluid"></figure>
-                                    <div class="caption">
-                                        <div class="txt1">Josie Howell</div>
-                                        <div class="txt2">Web Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-wrapper">
-                        <div class="testimonial-inner">
-                            <div class="testimonial clearfix">
-                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
-                                <div class="author clearfix">
-                                    <figure><img src="/images/client01.jpg" alt="" class="img-fluid"></figure>
-                                    <div class="caption">
-                                        <div class="txt1">Nina Chambers</div>
-                                        <div class="txt2">Web Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-wrapper">
-                        <div class="testimonial-inner">
-                            <div class="testimonial clearfix">
-                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
-                                <div class="author clearfix">
-                                    <figure><img src="/images/client02.jpg" alt="" class="img-fluid"></figure>
-                                    <div class="caption">
-                                        <div class="txt1">Jeremy Carlson</div>
-                                        <div class="txt2">Web Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-wrapper">
-                        <div class="testimonial-inner">
-                            <div class="testimonial clearfix">
-                                <div class="testimonial-caption">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."</div>
-                                <div class="author clearfix">
-                                    <figure><img src="/images/client03.jpg" alt="" class="img-fluid"></figure>
-                                    <div class="caption">
-                                        <div class="txt1">Josie Howell</div>
-                                        <div class="txt2">Web Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div th:replace="fragment/usertmp :: div#foot"></div>
 
 
     <script src="/js/jquery.min.js"></script>

@@ -40,4 +40,14 @@ public class RoomServiceImpl implements RoomService {
     public final Optional<Room> findById(int id) {
         return roomRepository.findById(id);
     }
+
+    @Override
+    public int countByType(String type) {
+        return roomRepository.countByType(type);
+    }
+
+    @Override
+    public int minPriceByType(String type) {
+        return roomRepository.minPriceByType(type);
+    }
 }
