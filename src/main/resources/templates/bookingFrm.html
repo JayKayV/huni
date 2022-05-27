@@ -3,61 +3,94 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>ĐẶT PHÒNG</title>
+        <title>Booking room</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/font-awesome.css" rel="stylesheet">
-        <link href="css/superslides.css" rel="stylesheet">
-        <link href="css/jquery.fancybox.css" rel="stylesheet">
-        <link href="css/select2.css" rel="stylesheet">
-        <link href="css/smoothness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
-        <link href="css/owl.carousel.css" rel="stylesheet">
-        <link href="css/slick.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/ok.css" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/font-awesome.css" rel="stylesheet">
+        <link href="/css/superslides.css" rel="stylesheet">
+        <link href="/css/jquery.fancybox.css" rel="stylesheet">
+        <link href="/css/select2.css" rel="stylesheet">
+        <link href="/css/smoothness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+        <link href="/css/owl.carousel.css" rel="stylesheet">
+        <link href="/css/slick.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/ok.css" rel="stylesheet">
     </head>
-    <body>
-
-
-        <form action="reservation.php" method="post">
-            
-            
-            
+    <body class="not-front page-details">
+        <div id="main">
+        <div th:replace="fragment/usertmp :: div#header1"></div>
+        <div th:replace="fragment/usertmp :: div#header2"></div>
+            <div class="breadcrumbs1_wrapper">
+                <div class="container">
+                    <div class="breadcrumbs1"><a href="/index">Home</a><span>|</span>Booking</div>
+                </div>
+            </div>
+            <div id="content">
+            <div class="container">
+                <div class="title1">Booking Form</div>
+                <div class="title2">Please fill your information below</div>
+        <form th:action="@{${'/saveBooking?id='+ r_id}}" method="post">
             <div class="elem-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+                <input type="text" id="name" name="name" placeholder="John Doe" class="form-control" required>
             </div>
             <div class="elem-group">
                 <label for="email">Your E-mail</label>
-                <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+                <input type="email" id="email" name="email" placeholder="john.doe@email.com" class="form-control" required>
             </div>
             <div class="elem-group">
                 <label for="phone">Your Phone</label>
-                <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+                <input type="text" id="phone" name="phone" placeholder="4983483872" class="form-control" required>
+            </div>
+            <div class="elem-group">
+                <label for="address">Your Address</label>
+                <input type="text" id="address" name="address" placeholder="123 AVC street" class="form-control" required>
             </div>
             <hr>
             <div class="elem-group inlined">
                 <label for="adult">Adults</label>
-                <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+                <input type="number" id="adult" name="total_adults" placeholder="2" min="1" class="form-control" required>
             </div>
             <div class="elem-group inlined">
                 <label for="child">Children</label>
-                <input type="number" id="child" name="total_children" placeholder="2" min="0" required>
+                <input type="number" id="child" name="total_children" placeholder="2" min="0" class="form-control" required>
             </div>
             <div class="elem-group inlined">
                 <label for="checkin-date">Check-in Date</label>
-                <input type="date" id="checkin-date" name="checkin" required>
+                <input type="date" id="checkin-date" name="checkin" class="form-control" required>
             </div>
             <div class="elem-group inlined">
                 <label for="checkout-date">Check-out Date</label>
-                <input type="date" id="checkout-date" name="checkout" required>
+                <input type="date" id="checkout-date" name="checkout" class="form-control" required>
             </div>
             <hr> 
             <button type="submit">Book The Rooms</button>
         </form>
+            </div>
+            </div>
+
+            <div th:replace="fragment/usertmp :: div#foot"></div>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/superfish.js"></script>
+        <script src="/js/jquery.superslides.js"></script>
+        <script src="/js/jquery.fancybox.js"></script>
+        <script src="/js/jquery.sticky.js"></script>
+        <script src="/js/jquery.easing.1.3.js"></script>
+        <script src="/js/select2.js"></script>
+        <script src="/js/jquery-ui.js"></script>
+        <script src="/js/owl.carousel.js"></script>
+        <script src="/js/slick.js"></script>
+        <script src="/js/jquery.appear.js"></script>
+        <script src="/http://ditu.google.cn/maps/api/js?sensor=false.js"></script>
+        <script src="/js/googlemap.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/scripts.js"></script>
     </body>
 </html>

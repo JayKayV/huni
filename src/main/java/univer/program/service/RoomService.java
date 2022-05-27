@@ -16,4 +16,6 @@ public interface RoomService {
     int countByType(String type);
 
     int minPriceByType(String type);
+
+    List<Room> findByHotelAndType(Hotel hotel, String type);
 }

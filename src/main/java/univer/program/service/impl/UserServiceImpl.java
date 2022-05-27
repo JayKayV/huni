@@ -36,8 +36,8 @@ public class UserServiceImpl implements UserService {
         return (List<User>)userRepository.findAll();
     }
 
-    public final void save(User u) {
-        userRepository.save(u);
+    public final User save(User u) {
+        return userRepository.save(u);
     }
 
     public final boolean deleteById(int id) {
@@ -60,5 +60,10 @@ public class UserServiceImpl implements UserService {
 
         if (token.isAuthenticated())
             SecurityContextHolder.getContext().setAuthentication(token);
+    }
+
+    @Override
+    public List<User> findByRole(String role) {
+        return userRepository.findByRole(role);
     }
 }

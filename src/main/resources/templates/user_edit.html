@@ -72,14 +72,14 @@
                                 </form>
                             </div>
 
-                            <form th:action="@{admin/user/delete}" method="post">
+                            <form th:action="@{/admin/user/delete}" method="post">
                                 <input type="hidden" value="${user.id}">
                                 <button class="btn btn-danger" id="deleteUser">Delete user</button>
                             </form>
                         </div>
                     </div>
 
-                    <a th:href="@{${'/admin/room?hid='+room.hotel.id}}">
+                    <a th:href="@{/admin/user}">
                         <button class="btn btn-primary">Return to room list</button>
                     </a>
                 </div>

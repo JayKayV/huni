@@ -7,6 +7,7 @@ import univer.program.entity.Hotel;
 import univer.program.repository.RoomRepository;
 import univer.program.service.RoomService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,5 +50,15 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public int minPriceByType(String type) {
         return roomRepository.minPriceByType(type);
+    }
+
+    @Override
+    public List<Room> findByHotelAndType(Hotel hotel, String type) {
+        List<Room> rooms = findByHotel(hotel), roomsResult = new ArrayList<>();
+        for (Room r: rooms) {
+            if (r.getType().equals(type))
+                roomsResult.add(r);
+        }
+        return roomsResult;
     }
 }

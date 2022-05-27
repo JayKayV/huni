@@ -20,12 +20,21 @@ public class Bill {
     @OneToMany
     private Set<Room> room;
 
+    public Bill() {}
+    public Bill(Date checkin, Date checkout, int guestCnt) {
+        this.checkin = checkin;
+        this.checkout = checkout;
+        this.guestCnt = guestCnt;
+    }
+
     public int getPrice() {
-        int price = 0;
+        int totalPrice = 0;
         for (Room r: room)
-            price += r.getPrice();
+            totalPrice += r.getPrice();
         long diff = checkout.getTime() - checkin.getTime();
-        return Float.floatToIntBits(diff / (3600 * 24));
+        int days = (int)Math.floor(diff / (3600 * 24 * 1000));
+
+        return totalPrice * days * guestCnt;
     }
 
     public int getId() {
@@ -74,5 +83,9 @@ public class Bill {
 
     public void setGuestCnt(int guestCnt) {
         this.guestCnt = guestCnt;
+    }
+
+    public Room firstRoom() {
+        return room.stream().findFirst().get();
     }
 }

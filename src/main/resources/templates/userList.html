@@ -45,12 +45,12 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <a th:href="@{/admin/room/add(hid=${hid})}">
-                    <button class="btn btn-dark">Add new room</button>
+                <a th:href="@{/admin/user/add}">
+                    <button class="btn btn-dark">Add new user</button>
                 </a>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Room list</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">User list</h6>
                     </div>
                     <div class="card-body">
 
@@ -82,10 +82,10 @@
                                     <td th:text="${u.phoneNumber}"></td>
                                     <td th:text="${u.email ? 'No email' : u.email}"></td>
                                     <td>
-                                        <a th:href="@{${'/admin/user/edit?id=' + room.id}}" class="btn btn-info btn-circle btn-sm">
+                                        <a th:href="@{${'/admin/user/edit?id=' + user.id}}" class="btn btn-info btn-circle btn-sm">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a th:href="@{${'/admin/user/edit?id=' + room.id + '#deleteRoom'}}" class="btn btn-danger btn-circle btn-sm">
+                                        <a th:href="@{${'/admin/user/edit?id=' + user.id + '#deleteUser'}}" class="btn btn-danger btn-circle btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

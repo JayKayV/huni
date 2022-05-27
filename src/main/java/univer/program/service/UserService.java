@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    void save(User user);
+    User save(User user);
 
     List<User> findall();
 
@@ -15,4 +15,6 @@ public interface UserService {
     Optional<User> findById(int id);
 
     void login(String username, String password);
+
+    List<User> findByRole(String role);
 }

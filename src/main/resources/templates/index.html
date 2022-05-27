@@ -59,7 +59,7 @@
                                         <div class="sf-mega">
                                             <ul>
                                                 <li th:each="hotel:${hotels}">
-                                                    <a th:href="@{${'/hotel/' + hotel.id}}" th:text='${hotel.name.substring(0, 2)}'> </a>
+                                                    <a th:href="@{${'/hotel/' + hotel.id}}" th:text='${hotel.name}'> </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -97,56 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="booking-wrapper">
-            <div class="container">
-                <div class="booking-inner clearfix">
-                    <form action="javascript:;" class="form1 clearfix">
-                        <div class="col1 c1">
-                            <div class="input1_wrapper"><label>Check in</label>
-                                <div class="input1_inner"><input type="date" class="form-control input datepicker" placeholder="Check in"></div>
-                            </div>
-                        </div>
-                        <div class="col1 c2">
-                            <div class="input1_wrapper"><label>Check out</label>
-                                <div class="input1_inner"><input type="date" class="form-control input datepicker" placeholder="Check out"></div>
-                            </div>
-                        </div>
-                        <div class="col2 c3">
-                            <div class="select1_wrapper"><label>Adults</label>
-                                <div class="select1_inner"><select class="select2 select" style="width: 100%">
-                                    <option value="1">1 Adult</option>
-                                    <option value="2">2 Adults</option>
-                                    <option value="3">3 Adults</option>
-                                    <option value="4">4 Adults</option>
-                                </select></div>
-                            </div>
-                        </div>
-                        <div class="col2 c4">
-                            <div class="select1_wrapper"><label>Children</label>
-                                <div class="select1_inner"><select class="select2 select" style="width: 100%">
-                                    <option value="1">Children</option>
-                                    <option value="1">1 Child</option>
-                                    <option value="2">2 Children</option>
-                                    <option value="3">3 Children</option>
-                                    <option value="4">4 Children</option>
-                                </select></div>
-                            </div>
-                        </div>
-                        <div class="col2 c5">
-                            <div class="select1_wrapper"><label>Rooms</label>
-                                <div class="select1_inner"><select class="select2 select" style="width: 100%">
-                                    <option value="1">1 Room</option>
-                                    <option value="2">2 Rooms</option>
-                                    <option value="3">3 Rooms</option>
-                                    <option value="4">4 Rooms</option>
-                                </select></div>
-                            </div>
-                        </div>
-                        <div class="col3 c6"><button type="submit" class="btn-form1-submit">CHECK AVAILABILITY</button></div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <div th:replace="fragment/usertmp :: div#bking"></div>
     </div>
     <div class="top-wrapper"></div>
     <div id="about">
@@ -212,9 +163,9 @@
                                     <div class="txt1">Grand Delux Room</div>
 
                                     <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
-                                    <div class="txt4"><a href="/details/special">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                    <div class="txt4"><a th:href="@{${'/rooms/special?hid='+ h.id}}">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
                                 </div>
-                                <div class="select-txt"><a href="/details/special"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="select-txt"><a th:href="@{${'/rooms/special?hid='+ h.id}}"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
                                 <div class="room-icons">
 
                                 </div>
@@ -236,9 +187,9 @@
                                     <div class="txt1">King Delux Room</div>
 
                                     <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
-                                    <div class="txt4"><a href="/details/vip">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                    <div class="txt4"><a th:href="@{${'/rooms/vip?hid='+ h.id}}">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
                                 </div>
-                                <div class="select-txt"><a href="/details/vip"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="select-txt"><a th:href="@{${'/rooms/vip?hid='+ h.id}}"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
                                 <div class="room-icons">
 
                                 </div>
@@ -260,9 +211,9 @@
                                     <div class="txt1">Classic Room</div>
 
                                     <div class="txt3">Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.</div>
-                                    <div class="txt4"><a href="/details/normal">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                    <div class="txt4"><a th:href="@{${'/rooms/normal?hid='+ h.id}}">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
                                 </div>
-                                <div class="select-txt"><a href="/details/normal"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="select-txt"><a th:href="@{${'/rooms/normal?hid='+ h.id}}"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
                                 <div class="room-icons">
 
                                 </div>
