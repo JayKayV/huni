@@ -1,5 +1,7 @@
 package univer.program.entity;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
@@ -7,6 +9,7 @@ import java.util.Set;
 @Entity
 public class Bill {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
     @ManyToOne
